@@ -5,23 +5,23 @@
        msg: "Hello"
      become: yes
 
-#   - name: Install docker
-#     command: "curl -fsSL https://get.docker.com -o get-docker.sh"
+   - name: Install docker
+     command: "curl -fsSL https://get.docker.com -o get-docker.sh"
 
-#   - command: "bash get-docker.sh"
+   - command: "bash get-docker.sh"
 
-#   - name: Run and enable docker
-#     service:
-#       name: docker
-#       state: started
-#       enabled: true
+   - name: Run and enable docker
+     service:
+       name: docker
+       state: started
+       enabled: true
 
-#   - name: Install or upgrade docker-compose
-#     get_url:
-#       url : "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-Linux-x86_64"
-#       dest: /usr/local/bin/docker-compose
-#       mode: 'a+x'
-#       force: yes
+   - name: Install or upgrade docker-compose
+     get_url:
+       url : "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-Linux-x86_64"
+       dest: /usr/local/bin/docker-compose
+       mode: 'a+x'
+       force: yes
 
    - copy:
        src: /home/admin1/demo5
