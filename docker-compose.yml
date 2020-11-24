@@ -10,9 +10,6 @@ services:
       - db
     ports:
       - "5000:5000"
-#    command: ["./wait-for-it.sh", "db:3306", "--", "python", "app.py"]
-#    volumes:
-#      - /app/:/app
 
   db:
     image: mysql:5.7
