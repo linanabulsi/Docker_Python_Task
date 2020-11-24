@@ -11,9 +11,6 @@ COPY get_statistics.sh /app
 RUN chmod +x get_statistics.sh
 
 
-#COPY ../current_statistics.sh /app
-#RUN chmod +x current_statistics.sh
-
 ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.7.3/wait /wait
 RUN chmod +x /wait
 
@@ -25,7 +22,6 @@ RUN chmod +x current_statistics.sh
 
 COPY app.py /app
 
-#CMD python app.py
 
 CMD ["/waitfor.sh"]
 
