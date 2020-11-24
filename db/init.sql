@@ -19,6 +19,5 @@ CREATE TABLE IF NOT EXISTS `mem_usage` (
 CREATE TABLE IF NOT EXISTS `cpu_usage` (
   `Usage` VARCHAR(20) NOT NULL,
   `Taken_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-#  `Taken_at` VARCHAR(20) NOT NULL,
   INDEX(`Taken_at`)
 );
