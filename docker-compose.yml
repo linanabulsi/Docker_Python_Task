@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  app:
+    build: ./app
+    image: linamn/webapp:v1
+    depends_on:
+      - db
+    restart: on-failure
+    links:
+      - db
+    ports:
+      - "5000:5000"
+#    command: ["./wait-for-it.sh", "db:3306", "--", "python", "app.py"]
+#    volumes:
+#      - /app/:/app
+
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/:ro
+    restart: on-failure
